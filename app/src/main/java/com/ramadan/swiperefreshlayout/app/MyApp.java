@@ -28,6 +28,11 @@ public class MyApp extends Application {
         mInstance = null;
     }
 
+    public static synchronized MyApp getInstance() {
+        return mInstance;
+    }
+
+
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(getApplicationContext());
